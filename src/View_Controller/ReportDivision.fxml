@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="View_Controller.ReportDivisionController">
+   <children>
+      <VBox alignment="CENTER" layoutX="3.0" prefHeight="723.0" prefWidth="1283.0">
+         <children>
+            <HBox prefHeight="69.0" prefWidth="1280.0">
+               <children>
+                  <Label alignment="CENTER" prefHeight="65.0" prefWidth="1280.0" text="Customers by State or Province">
+                     <font>
+                        <Font name="System Bold" size="30.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <VBox alignment="CENTER" fillWidth="false" prefHeight="588.0" prefWidth="1240.0">
+               <children>
+                  <ComboBox fx:id="countryComboBox" onAction="#countryComboBoxSelected" prefWidth="150.0">
+                     <VBox.margin>
+                        <Insets bottom="20.0" left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin>
+                  </ComboBox>
+                  <TableView fx:id="divisionTableView" prefHeight="496.0" prefWidth="346.0">
+                     <columns>
+                        <TableColumn fx:id="divisionColumn" prefWidth="301.0" resizable="false" text="Division" />
+                        <TableColumn fx:id="countColumn" minWidth="7.0" prefWidth="44.0" resizable="false" text="Count" />
+                     </columns>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </TableView>
+                  <Button fx:id="cancelButton" alignment="CENTER" mnemonicParsing="false" onAction="#displayMainScreen" text="Back">
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets left="20.0" right="20.0" />
+               </VBox.margin>
+            </VBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

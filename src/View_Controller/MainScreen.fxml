@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="View_Controller.MainScreenController">
+   <children>
+      <VBox prefHeight="720.0" prefWidth="1280.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="146.0" prefWidth="1260.0">
+               <children>
+                  <Label alignment="TOP_LEFT" text="Appointment and Customer Management" textFill="#001b75">
+                     <font>
+                        <Font name="System Bold" size="39.0" />
+                     </font>
+                  </Label>
+               </children></HBox>
+            <Label alignment="CENTER" prefHeight="31.0" prefWidth="1290.0" text="Appointments">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Label>
+            <HBox alignment="CENTER_RIGHT" prefHeight="365.0" prefWidth="1280.0">
+               <children>
+                  <VBox alignment="TOP_CENTER" prefHeight="304.0" prefWidth="1092.0">
+                     <children>
+                        <TableView fx:id="appointmentTableView" prefHeight="272.0" prefWidth="1103.0">
+                          <columns>
+                            <TableColumn fx:id="appointmentIdColumn" prefWidth="41.0" resizable="false" text="ID" />
+                              <TableColumn fx:id="appointmentCustomerColumn" prefWidth="140.0" resizable="false" text="Customer" />
+                            <TableColumn fx:id="appointmentTitleColumn" prefWidth="126.0" resizable="false" text="Title" />
+                              <TableColumn fx:id="appointmentDescriptionColumn" prefWidth="200.0" resizable="false" text="Description" />
+                              <TableColumn fx:id="appointmentLocationColumn" prefWidth="122.0" resizable="false" text="Location" />
+                              <TableColumn fx:id="appointmentTypeColumn" prefWidth="105.0" resizable="false" text="Type" />
+                              <TableColumn fx:id="appointmentContactColumn" prefWidth="140.0" resizable="false" text="Contact" />
+                              <TableColumn fx:id="appointmentStartTimeColumn" prefWidth="111.0" resizable="false" text="Start Time" />
+                              <TableColumn fx:id="appointmentEndTimeColumn" prefWidth="110.0" resizable="false" text="End Time" />
+                          </columns>
+                        </TableView>
+                        <HBox alignment="CENTER_RIGHT" prefHeight="44.0" prefWidth="1090.0" spacing="10.0">
+                           <children>
+                              <RadioButton fx:id="allRadioButton" mnemonicParsing="false" onAction="#allRadioButtonClicked" text="All" />
+                              <RadioButton fx:id="weekRadioButton" mnemonicParsing="false" onAction="#weekRadioButtonClicked" text="This Week" />
+                              <RadioButton fx:id="monthRadioButton" mnemonicParsing="false" onAction="#monthRadioButtonClicked" text="This Month" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <VBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="165.0" prefWidth="147.0">
+                     <children>
+                        <Button fx:id="addAppointmentButton" alignment="CENTER" mnemonicParsing="false" onAction="#addAppointmentButtonClicked" prefWidth="127.0" text="Add">
+                           <VBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </VBox.margin></Button>
+                        <Button fx:id="modifyAppointmentButton" alignment="CENTER" mnemonicParsing="false" onAction="#modifyAppointmentButtonClicked" prefWidth="127.0" text="Modify / Delete">
+                           <VBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </VBox.margin></Button>
+                     </children>
+                     <opaqueInsets>
+                        <Insets bottom="10.0" left="10.0" right="10.0" />
+                     </opaqueInsets>
+                  </VBox>
+               </children>
+            </HBox>
+            <Separator prefWidth="200.0">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin></Separator>
+            <HBox alignment="CENTER_LEFT" prefHeight="282.0" prefWidth="1271.0">
+               <children>
+                  <VBox alignment="TOP_CENTER" prefHeight="282.0" prefWidth="732.0">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="31.0" prefWidth="394.0" text="Customers">
+                           <font>
+                              <Font name="System Bold" size="21.0" />
+                           </font></Label>
+                        <TableView fx:id="customerTableView" prefHeight="209.0" prefWidth="732.0">
+                          <columns>
+                            <TableColumn fx:id="customerIdColumn" prefWidth="34.0" resizable="false" text="ID" />
+                            <TableColumn fx:id="customerNameColumn" prefWidth="161.0" resizable="false" text="Name" />
+                              <TableColumn fx:id="customerAddressColumn" prefWidth="166.0" resizable="false" text="Address" />
+                              <TableColumn fx:id="customerPostalCodeColumn" prefWidth="135.0" resizable="false" text="Postal Code" />
+                              <TableColumn fx:id="customerDivisionColumn" prefWidth="101.0" resizable="false" text="State / Province" />
+                              <TableColumn fx:id="customerPhoneColumn" prefWidth="134.0" resizable="false" text="Phone" />
+                          </columns>
+                           <padding>
+                              <Insets bottom="5.0" />
+                           </padding>
+                        </TableView>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER_LEFT" prefHeight="250.0" prefWidth="144.0">
+                     <children>
+                        <Button fx:id="addCustomerButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#addCustomerButtonClicked" prefWidth="127.0" text="Add">
+                           <VBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </VBox.margin></Button>
+                        <Button fx:id="modifyCustomerButton" alignment="CENTER" mnemonicParsing="false" onAction="#modifyCustomerButtonClicked" prefWidth="127.0" text="Modify / Delete">
+                           <VBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </VBox.margin></Button>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="250.0" prefWidth="353.0">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="226.0" prefWidth="355.0">
+                           <children>
+                              <Separator orientation="VERTICAL" prefHeight="200.0" />
+                              <VBox alignment="TOP_CENTER" prefHeight="205.0" prefWidth="341.0">
+                                 <children>
+                                    <Label alignment="CENTER" prefHeight="31.0" prefWidth="118.0" text="Reports">
+                                       <font>
+                                          <Font name="System Bold" size="21.0" />
+                                       </font>
+                                    </Label>
+                                    <Button fx:id="reportCountsButton" mnemonicParsing="false" onAction="#reportCountsButtonClicked" text="Total Appointments (Type by Month)">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                    <Button fx:id="reportDivisionButton" layoutX="82.0" layoutY="46.0" mnemonicParsing="false" onAction="#reportDivisionButtonClicked" text="Total Customers (State / Province)" />
+                                    <Button fx:id="reportContactsButton" layoutX="22.0" layoutY="46.0" mnemonicParsing="false" onAction="#reportContactsButtonClicked" text="Contact Schedules">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                    <Button fx:id="reportLoginsButton" layoutX="63.0" layoutY="76.0" mnemonicParsing="false" onAction="#reportLoginsButtonClicked" text="Login Attempts">
+                                       <VBox.margin>
+                                          <Insets left="5.0" right="5.0" />
+                                       </VBox.margin></Button>
+                                    <Separator prefWidth="200.0">
+                                       <VBox.margin>
+                                          <Insets top="10.0" />
+                                       </VBox.margin>
+                                    </Separator>
+                                    <VBox alignment="CENTER" prefHeight="226.0" prefWidth="129.0">
+                                       <children>
+                                          <Button alignment="CENTER" mnemonicParsing="false" onAction="#logoutButtonClicked" prefWidth="64.0" text="Logout">
+                                             <VBox.margin>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                             </VBox.margin>
+                                          </Button>
+                                          <Button fx:id="exitButton" alignment="CENTER" mnemonicParsing="false" onAction="#exitButtonClicked" prefWidth="64.0" text="Exit" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </children></VBox>
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets left="10.0" right="10.0" />
+         </padding>
+      </VBox>
+   </children>
+</AnchorPane>

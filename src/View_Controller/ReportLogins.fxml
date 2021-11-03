@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="View_Controller.ReportLoginsController">
+   <children>
+      <VBox alignment="CENTER" layoutX="2.0" layoutY="2.0" prefHeight="720.0" prefWidth="1280.0">
+         <children>
+            <HBox prefHeight="69.0" prefWidth="1280.0">
+               <children>
+                  <Label alignment="CENTER" prefHeight="65.0" prefWidth="1280.0" text="Login Attempts">
+                     <font>
+                        <Font name="System Bold" size="30.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <VBox alignment="CENTER" fillWidth="false" prefHeight="588.0" prefWidth="1240.0">
+               <children>
+                  <TableView fx:id="loginTableView" prefHeight="554.0" prefWidth="434.0">
+                     <columns>
+                        <TableColumn fx:id="loginUserColumn" prefWidth="114.0" resizable="false" text="User" />
+                        <TableColumn fx:id="loginAuthenticatedColumn" prefWidth="103.0" resizable="false" text="Authenticated" />
+                        <TableColumn fx:id="loginAttemptTimeColumn" prefWidth="216.0" resizable="false" text="Attempted Time" />
+                     </columns>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </TableView>
+               </children>
+               <VBox.margin>
+                  <Insets left="20.0" right="20.0" />
+               </VBox.margin>
+            </VBox>
+            <Button fx:id="cancelButton" alignment="CENTER" mnemonicParsing="false" onAction="#displayMainScreen" text="Back" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
